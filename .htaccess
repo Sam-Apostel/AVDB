@@ -1,0 +1,8 @@
+DirectoryIndex index.html
+
+ErrorDocument 400 http://www.avandenbosch.be/error/400.html
+ErrorDocument 401 http://www.avandenbosch.be/error/401.html
+ErrorDocument 403 http://www.avandenbosch.be/error/403.html
+ErrorDocument 404 http://www.avandenbosch.be/error/404.html
+ErrorDocument 500 http://www.avandenbosch.be/error/500.html
+ErrorDocument 503 http://www.avandenbosch.be/error/503.html

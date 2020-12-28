@@ -1,0 +1,650 @@
+/*@import url('https://fonts.googleapis.com/css?family=Hind+Vadodara&display=swap');*/
+
+/* gujarati */
+@font-face {
+    font-family: 'Hind Vadodara';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Hind Vadodara Regular'), local('HindVadodara-Regular'), url(https://fonts.gstatic.com/s/hindvadodara/v6/neINzCKvrIcn5pbuuuriV9tTQInVrFkcrSuywA.woff2) format('woff2');
+    unicode-range: U+0964-0965, U+0A80-0AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839;
+}
+/* latin-ext */
+@font-face {
+    font-family: 'Hind Vadodara';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Hind Vadodara Regular'), local('HindVadodara-Regular'), url(https://fonts.gstatic.com/s/hindvadodara/v6/neINzCKvrIcn5pbuuuriV9tTQJzVrFkcrSuywA.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Hind Vadodara';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Hind Vadodara Regular'), local('HindVadodara-Regular'), url(https://fonts.gstatic.com/s/hindvadodara/v6/neINzCKvrIcn5pbuuuriV9tTQJLVrFkcrSs.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+*{
+    -webkit-user-select: none;
+    user-select: none;
+}
+body{
+    margin: 0 0 calc(105px - 0.03666833538 * 50vw) 0;
+    font-family:  'Avenir Next', sans-serif, 'Hind Vadodara';
+    min-height: calc(100vh - (210px - 0.03666833538 * 100vw));
+}
+body:before{
+    content:"";
+    position: fixed;
+    width: calc(50vw + 50vh);
+    height: 100vh;
+    background-color: rgb(247, 247, 247);
+    left:-50vh;
+    top:0;
+    transform: skewX(45deg);
+
+}
+/*
+    header and footer wrappers
+ */
+header, footer{
+    position: fixed;
+    transform: skewY(-2.1deg);
+    overflow: hidden;
+    width: 100vw;
+    height: 105px;
+    z-index: 10;
+    opacity: .9;
+    filter: drop-shadow(0px 0px 4px rgba(0,0,0,.2));
+}
+header{
+    background-color: #FEBE10;
+    top: calc(-0.03666833538 * 50vw);
+}
+footer{
+    background-color: #53699D;
+    bottom: calc(-0.03666833538 * 50vw);
+}
+/*
+    header and footer liners
+ */
+nav{
+    position: fixed;
+    width: 100vw;
+    height: 80px;
+    background-color: #F2F2F2;
+    transform: skewY(2.1deg);
+}
+header nav{
+    top:calc(0.03666833538 * 50vw);
+}
+footer nav{
+    bottom: calc(0.03666833538 * 50vw);
+}
+
+/*
+    navigation layout
+ */
+
+header nav #logo{
+    height: 60px;
+    margin: 10px;
+    transition: margin-left .2s;
+}
+header nav input{
+    display: none;
+}
+
+header nav label{
+    font-weight: 600;
+    font-size: 25px;
+    text-decoration: none;
+    color: #53699D;
+    display: inline-block;
+    transform: rotate(-1.4deg);
+    vertical-align: top;
+    transition: transform .2s, color .2s, font-size .2s, transform .2s, padding .2s;
+    line-height: 28px;
+
+}
+header nav label:first-of-type{
+    transform: rotate(0deg);
+}
+header nav label:hover, input:checked + label {
+    color: #FEBE10;
+}
+header nav label:not(:first-of-type):hover::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 80px;
+    background: rgba(0,0,0,0.1);
+    position: absolute;
+    left:0;
+    top:0;
+    transform: rotate(1.4deg);
+    z-index: -1;
+}
+header nav label:nth-of-type(2){
+    padding: 45px 20px 17px 20px;
+}
+header nav label:nth-of-type(3){
+    padding: 40px 20px 17px 20px;
+}
+header nav label:nth-of-type(4){
+    padding: 30px 20px 22px 20px;
+}
+header nav label:nth-of-type(5){
+    padding: 25px 20px 22px 20px;
+}
+header nav label:nth-of-type(6){
+    padding: 20px 20px 23px 20px;
+}
+
+footer nav, #contact nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+nav div{
+    display: flex;
+    color: #828282;
+    justify-content: center;
+    align-content: flex-start;
+    width: 33vw;
+    height: 80px;
+    padding-left: 80px;
+    flex-direction: column;
+    position: relative;
+    max-width: 250px;
+
+}
+nav div a{
+    color: #828282;
+    text-decoration: none;
+}
+nav div a:hover{
+    color: #444444;
+    text-decoration: underline;
+}
+nav div.mail:before{
+    background: url("img/icons/mail.png");
+}
+nav div.map:before{
+    background: url("img/icons/map.png");
+}
+nav div.tel:before{
+    background: url("img/icons/cel.png");
+}
+nav div.mail:before, nav div.map:before, nav div.tel:before{
+    content:"";
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: absolute;
+    left: 0;
+    margin: 25px;
+    top:0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+nav div span{
+    display:block;
+}
+
+/*
+    section layout
+ */
+
+section{
+    width:100vw;
+    transform: skewY(-2.1deg);
+    text-align: center;
+    box-sizing: border-box;
+    display:none;
+    min-height: calc(100vh - (210px - 0.03666833538 * 100vw));
+    padding-top:calc(105px - 0.03666833538 * 50vw);
+}
+section#over-ons{
+    display: flex;
+}
+section:target ~ section#over-ons{
+    display: none;
+}
+section:target{
+    display: block;
+}
+section#over-ons:target, section#partners:target, section#contact:target{
+    display: flex;
+}
+/*
+    some brand styling
+ */
+h1, h2, p, a, form *{
+    -webkit-user-select: auto;
+    user-select: auto;
+}
+h1, h2, p{
+    display:block;
+}
+h1{
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 40px;
+    color: #063A74;
+    margin: 30px 0 0 0;
+}
+h2{
+    margin: 5px 0 10px 0;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    color: #FEBE10;
+}
+p{
+    margin: 0 0 20px 0;
+    font-size: 15px;
+    line-height: 20px;
+    color: #3D3D3D;
+}
+p em{
+    font-weight: 600;
+}
+
+#realisaties > div{
+    margin: 20px;
+}
+#realisaties .picture{
+    display: inline-block;
+    position: relative;
+}
+#realisaties .picture img{
+    position: absolute;
+    height: 100%;
+    top:0;
+    left:0;
+}
+
+#realisaties .picture .before{
+    opacity: 0;
+    transition: .5s;
+}
+#realisaties .picture:hover .before{
+     opacity: 1;
+ }
+
+#gevel, #lei{
+    display: inline-block;
+}
+#realisaties .picture{
+    height: 240px;
+    width: 320px;
+}
+#pannen .picture:nth-of-type(2){
+     width: 293px;
+ }
+
+#lei .picture, #gevel .picture, #roofing .picture{
+    height: 298px;
+    width: 240px;
+}
+#roofing .picture{
+    width: 223px;
+}
+/*
+    section specific layout
+*/
+#partners{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#over-ons{
+
+}
+#over-ons .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 1000px;
+}
+#over-ons .aside{
+    height: calc(100vh - (210px - 3.666833538vw));
+    width: calc(100vw - 1000px);
+    background: url("img/IMG_3624.jpeg") left center;
+    background-size: cover;
+}
+
+
+#contact{
+    flex-direction: row;
+    justify-content: left;
+}
+#contact iframe{
+    width: 50vw;
+    height: calc( 100vh -  160px);
+    align-self: flex-start;
+    flex: 1;
+    border: 0;
+}
+#contact > div{
+    align-self: center;
+    flex: 0;
+}
+#contact nav{
+    position: initial;
+    width: 50vw;
+    height: initial;
+    background-color: initial;
+    transform: initial;
+    text-align: left;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+}
+#contact nav div{
+    display: inline-flex;
+    min-width: 250px;
+}
+
+#contact form label{
+    display: block;
+    width: calc( 50vw - 40px);
+    margin: 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    color: #53699D;
+}
+
+#contact form label input,#contact form label textarea{
+    border-radius: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-bottom:1px solid #53699D;
+    font-family:  'Hind Vadodara', 'Avenir Next', sans-serif;
+    line-height: 20px;
+    padding-left: 10px;
+    background: none;
+    font-size: 16px;
+}
+#contact form ::placeholder{
+    opacity: .8;
+}
+#contact form label textarea{
+    height: 10em;
+    resize: vertical;
+}
+#contact form button{
+    background-color: #53699D;
+    color:white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+#contact form h1 {
+    padding: 20px;
+}
+
+#partners picture{
+    max-height: 70px;
+    max-width: 80vw;
+}
+#partners picture img{
+    max-height: 70px;
+    filter: drop-shadow(0px 0px 8px rgba(0,0,0,.3));
+    margin: 20px 40px;
+    max-width: 80vw;
+}
+#partners div{
+    display: block;
+}
+#partners a{
+    text-decoration: none;
+}
+@media screen and (max-width: 1440px) {
+    #over-ons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+    #over-ons .text{
+        padding: 20px;
+        width: 1000px;
+    }
+    #over-ons .aside{
+        width: calc(100vw - 120px);
+        height: calc((100vw - 120px) / 2.59126725);
+        background: url("img/front wide.jpg") center center;
+        background-size: cover;
+    }
+}
+@media screen and (min-width: 900px) {
+    br.sent{
+        display: none;
+    }
+}
+@media screen and (max-width: 900px) {
+    p{
+        margin: 15px 20px;
+        line-height: 25px;
+    }
+    footer nav div.tel {
+        width: 22vw;
+    }
+    #over-ons .text{
+        width: 100vw;
+        box-sizing: border-box;
+    }
+    #over-ons .aside{
+        width: calc(100vw - 40px);
+        height: calc((100vw - 40px) / 2.59126725);
+        margin: 0 0 20px 0;
+    }
+}
+@media screen and (max-width: 820px) {
+    header nav #logo {
+        margin-left: -160px;
+    }
+    header nav label:not(:first-of-type){
+        font-size: 20px;
+        transform: rotate(0deg);
+        padding: 30px 10px 22px 10px;
+    }
+    header nav label:not(:first-of-type):hover::before{
+        transform: rotate(0deg);
+    }
+    footer{
+        position: sticky;
+        bottom: calc( -240px - (0.03666833538 * 50vw));
+        height: calc(240px + 0.03666833538 * 50vw);
+        overflow: initial;
+    }
+    footer nav{
+        height: 240px;
+        display:block;
+        flex-direction: initial;
+        justify-content: initial;
+        top:calc(0.03666833538 * 50vw);
+    }
+    footer nav div{
+        width: 220px;
+        display:flex;
+        max-width: initial;
+        margin: 0 auto;
+    }
+    body{
+        margin: 0 0 0 0;
+        padding-bottom:-10px;
+    }
+    #contact{
+        flex-direction: column;
+        justify-content: left;
+        align-items: center;
+    }
+    #contact iframe{
+        width: 100vw;
+        height: 30vh;
+    }
+    #contact form label {
+        width: calc(100vw - 40px);
+    }
+    #contact nav{
+        width: 100vw;
+    }
+
+}
+@media (hover: none) and (pointer: coarse) {
+    body{
+        margin: 0 0 calc(105px - 0.03666833538 * 50vw) 0;
+    }
+    #over-ons .aside{
+        margin: 0;
+    }
+    #over-ons{
+        margin-top: calc(-0.03666833538 * 50vw);
+    }
+
+    #contact{
+        flex-direction: column;
+        justify-content: left;
+        align-items: center;
+    }
+    #contact iframe{
+        width: 100vw;
+        height: 30vh;
+    }
+    #contact form label {
+        width: calc(100vw - 40px);
+    }
+
+    header, footer{
+        position: fixed;
+        transform: skewY(-2.1deg);
+        overflow: hidden;
+        width: 100vw;
+        height: calc(59px + 0.03666833538 * 50vw);
+        z-index: 10;
+        opacity: .9;
+        filter: drop-shadow(0px 0px 4px rgba(0,0,0,.2));
+    }
+    header{
+        background-color: #FEBE10;
+        bottom: calc(-0.03666833538 * 50vw);
+        top:auto;
+    }
+    footer{
+        background-color: #53699D;
+        top: calc(-0.03666833538 * 50vw);
+        height: calc(0.03666833538 * 50vw);
+    }
+    footer nav{
+        display: none;
+    }
+    header nav{
+        top:0;
+        bottom:0;
+        height: 59px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    header nav #logo{
+        display:none;
+    }
+    header nav label:not(:first-of-type){
+        font-size: 20px;
+        transform: rotate(0deg);
+        padding: 16px 10px 15px 10px;
+    }
+
+    #realisaties > div{
+        display: block;
+        position: relative;
+        margin: 15px;
+        padding: 0;
+        width: calc(100vw - 30px);
+        text-align: left;
+    }
+    .picture img{
+        width: calc(100vw - 30px);
+    }
+    .picture {
+        width: calc(100vw - 30px);
+        height:calc((100vw - 30px) / 1.33333) !important;
+    }
+    #pannen .picture:nth-of-type(2){
+        height:calc((100vw - 30px) / 1.2208333) !important;
+    }
+    #lei .picture, #gevel .picture, #roofing .picture{
+        height:calc((100vw - 30px) * 1.24166666) !important;
+    }
+    #roofing .picture{
+        height:calc((100vw - 30px) / 0.74832215) !important;
+    }
+
+    #realisaties:target {
+        display: block;
+    }
+    #realisaties{
+        padding-top: 10px;
+    }
+    #contact, #partners, #over-ons{
+        padding-top:0;
+    }
+}
+@media (hover: none) and (pointer: coarse) and (max-width: 400px){
+    header nav label:not(:first-of-type) {
+        font-size: 15px;
+    }
+}
+@media (hover: none) and (pointer: coarse) and (max-width: 319px) {
+    header nav label:not(:first-of-type) {
+        font-size: 12px;
+    }
+}
+/* (hover: none) and (pointer: coarse) */
+@media (prefers-color-scheme: dark) {
+    html,body{
+        background: #2B2B2B;
+    }
+    body:before{
+        background: #313335;
+    }
+    p{
+        color: #bcbcbc;
+    }
+    h1{
+        color:#516591;
+    }
+    nav{
+        background: #3C3F41;
+    }
+    #realisaties img, #realisaties .picture:hover .before{
+        opacity: .7;
+        transition: opacity .5s;
+    }
+    #realisaties .picture:hover .after{
+        opacity: 0;
+
+    }
+    #partners picture img{
+        filter: drop-shadow(0px 0px 8px rgba(255, 255, 255, .1));
+        opacity: .7;
+    }
+    nav div a:hover{
+        color: #b1b1b1;
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "short_name": "AVDB",
+  "name": "Van den Bosch Dakwerken",
+  "icons": [
+    {
+      "src": "/img/icons/icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    }
+  ],
+  "start_url": "#contact",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "theme_color": "#53699D"
+}
